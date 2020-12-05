@@ -4,12 +4,9 @@ var doc=document,
 var a=i%2;
 var userlogo=doc.getElementById("userLogo"),
 	menu=doc.getElementById("menu"),
-	profile=doc.getElementById("profile"),
-	nav_a_two=doc.getElementById("nav_a_two"),
-	nav_a_three=doc.getElementById("nav_a_three");
+	profile=doc.getElementById("profile");
 
-profile.setAttribute("href","profile/my.php");
-nav_a_three.setAttribute("href","profile/my.php");
+
 
 userlogo.addEventListener("click",function () {
 	a=i%2;
@@ -27,9 +24,9 @@ if (a==0){
 		
 }
 
+profile.setAttribute("href","my.php");
 
 
-/*nav_a_two.setAttribute("href","profile/my.php");*/
 
 
 /*	if (a=0) {

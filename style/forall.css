@@ -22,7 +22,7 @@ header {
 	align-items: center;
 
 }
-#nav_p {
+.nav_p {
 	font-size: 32px;
 	padding-right: 3%;
 	padding-left: 3%;
@@ -105,15 +105,12 @@ cursor:pointer;
 	color: white;
 	margin-top: 30%;
 }
-/*#button_auth {
-	background-color: rgb(21, 255, 0);
-	outline: 0;
-	font-size: 22px;
-	border-radius: 15px;
-	margin: 0% 10% 0% 0%;
-	position: absolute;
-	width: 100px;
-	height: 50px;
-}*/
+#nameUser {
+	margin: 0% 0% 0% -100%;
+	
 
+}
+dd, dt {
+	font-family: Helvetica, Arial;
+}
 

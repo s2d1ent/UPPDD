@@ -4,4 +4,5 @@
 	$username="root";
 	$bdpassword="root";
 	$dbname="registerbd";
+	
 ?>

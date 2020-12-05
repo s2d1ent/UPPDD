@@ -22,9 +22,9 @@
 				</a>
 			</div>
 		<nav id="nav" >
-		<a href="index.php" id="nav_p" class="nav_p_o">Главная </a>
-		<a href="#" id="nav_p">История </a>
-		<a href="#" id="nav_p">Профиль </a>		
+		<a href="index.php" id="nav_a_one" class="nav_p" class="nav_p_o">Главная </a>
+		<a href="#" id="nav_a_two" class="nav_p">История </a>
+		<a href="#" id="nav_a_three" class="nav_p">Профиль </a>		
 		</nav>
 <?php
 if($_COOKIE["user"]==""):
@@ -37,10 +37,14 @@ if($_COOKIE["user"]==""):
 else :
 ?>
 <div id="auth">
+		<p id="nameUser">
+	<?=
+	$_COOKIE["user"];
+	?></p>
 	<img src="src/user.png" id="userLogo">
 	<div id="menu">
 		<dl>
-			<dd><a href="#">Профиль</a></dd>
+			<dd><a href="#" id="profile">Профиль</a></dd>
 			<dd><a href="signout.php">Выйти</a></dd>
 		</dl>
 	</div>
@@ -59,35 +63,20 @@ endif;
 		<h2> Форма регистрации </h2>
 		<h1>/</h1>
 		<form action="php/reg.php" method="post" id="reg_form">
-			<input type="email" name="email" class="login" placeholder="Электронная почта*">
-			<input type="text" name="login" class="login" placeholder="Логин*">
-			<input type="text" name="name" class="login" placeholder="Имя*">
-			<input type="password" name="pass" class="login" placeholder="Пароль*">
+			<input type="email" name="email" required  class="login" placeholder="Электронная почта*">
+			<input type="text" name="login" required  class="login" placeholder="Логин*">
+			<input type="text" name="name" required  class="login" placeholder="ФИО*">
+			<input type="password" name="pass" required  class="login" placeholder="Пароль*">
 
 			<input type="submit" name="send" class="but" value="Регистрация">
 		</form>
 </div>
 <div id="sinform">
-<?php
-if($_COOKIE["regfail"]==""):
-
-?>
-
-	<div id="finish" style="color:rgb(3, 204, 0);border:3px solid #03cc00;"><p style="color:rgb(3, 204, 0);"> Вы успешно создали аккаунт</p></div> 
-<?php
-else :
-?>
-
-	<div id="finish" style=";border:3px solid rgb(204, 0, 0);"><p style="color:rgb(204, 0, 0);"> Ошибка:ваш аккаунт не был создан!</p></div>
-<?php
-endif;
-?>
-
 	<h2> Форма авторизации </h2>
 		<h1>/</h1>
-		<form action="php/auth.php" method="post" id="sin_form">
-			<input type="text" name="login" class="llogin" placeholder="Логин">
-			<input type="password" name="pass" class="llogin" placeholder="Пароль">
+		<form action="php/auth.php" required  method="post" id="sin_form">
+			<input type="text" required  name="login" class="llogin" placeholder="Логин">
+			<input type="password" required  name="pass" class="llogin" placeholder="Пароль">
 			<input type="submit" name="but" class="but" value="Войти">
 		</form>
 </div>

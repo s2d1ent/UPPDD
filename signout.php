@@ -22,9 +22,9 @@
 				</a>
 			</div>
 		<nav id="nav" >
-		<a href="index.php" id="nav_p" class="nav_p_o">Главная </a>
-		<a href="#" id="nav_p">История </a>
-		<a href="#" id="nav_p">Профиль </a>		
+		<a href="index.php" id="nav_a_one" class="nav_p" class="nav_p_o">Главная </a>
+		<a href="#" id="nav_a_two" class="nav_p">История </a>
+		<a href="#" id="nav_a_three" class="nav_p">Профиль </a>		
 		</nav>
 <?php
 if($_COOKIE["user"]==""):
@@ -37,10 +37,14 @@ if($_COOKIE["user"]==""):
 else :
 ?>
 <div id="auth">
+		<p id="nameUser">
+	<?=
+	$_COOKIE["user"];
+	?></p>
 	<img src="src/user.png" id="userLogo">
 	<div id="menu">
 		<dl>
-			<dd><a href="#">Профиль</a></dd>
+			<dd><a href="#" id="profile">Профиль</a></dd>
 			<dd><a href="signout.php">Выйти</a></dd>
 		</dl>
 	</div>
