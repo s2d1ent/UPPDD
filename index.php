@@ -41,7 +41,7 @@ else :
 	<div id="menu">
 		<dl>
 			<dd><a href="#">Профиль</a></dd>
-			<dd><a href="#">Выйти</a></dd>
+			<dd><a href="signout.php">Выйти</a></dd>
 		</dl>
 	</div>
 

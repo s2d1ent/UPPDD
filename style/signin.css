@@ -17,7 +17,7 @@ body {
 }
 
 #cont{
-    margin: 15% 0% 0% 0%;
+    margin: 10% 0% 0% 0%;
     width: 100%;
     display: inline-flex;
     justify-content: space-around;
@@ -29,11 +29,14 @@ body {
     justify-content: center;
     align-items: center;
     width: 400px;
-    height: 300px;
+    height: 500px;
     background-color: white;
     border-radius: 15px ;
     flex-direction: column;
     box-shadow: 0px 10px 10px 5px rgba(0, 0, 0, 0.5);
+}
+#regform > h2 {
+    color: black;
 }
 #sinform{
     display: flex;
@@ -46,7 +49,9 @@ body {
     flex-direction: column;
     box-shadow: 0px 10px 10px 5px rgba(0, 0, 0, 0.5);
 }
-
+#sinform > h2 {
+    color: black;
+}
 #reg_form {
     display: flex;
     justify-content: center;
@@ -60,7 +65,7 @@ body {
     align-items: center;
     flex-direction: column;
 }
-.login {
+.login,.llogin {
     font-family: Helvetica, Arial ;
     text-align: center;
     border-radius: 20px;
@@ -69,7 +74,7 @@ body {
     margin: 0% 0% 10% 0% ;
     outline: 0;
 }
-.login:focus,.login:active {
+.login:focus,.login:active,.llogin:focus,.llogin:active {
     outline: 0;
     border:0;
     outline-offset: 0;
@@ -88,4 +93,48 @@ body {
     background-color: rgb(59, 255, 65);
 }
 
+.passport, .ppassport {
+    font-family: Helvetica, Arial ;
+    text-align: center;
+    border-radius: 20px;
+    width: 100px;
+    height: 35px;
+    margin: 0% 0% 10% 0% ;
+    outline: 0;
+}
+.passport:focus,.passport:active,.ppassport:focus,.ppassport:active  {
+    outline: 0;
+    border:0;
+    outline-offset: 0;
+}
 
+#span_form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+#span_form_one,#span_form_two {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+ input.login::-webkit-input-placeholder {color:#c00;}
+ input.login::-moz-placeholder {color:#c00;}
+ input.login:-moz-placeholder {color:#c00;}
+ input.login:-ms-input-placeholder {color:#c00;}
+input.ppassport::-webkit-input-placeholder {color:#c00;}
+ input.ppassport::-moz-placeholder {color:#c00;}
+ input.ppassport:-moz-placeholder {color:#c00;}
+ input.ppassport:-ms-input-placeholder {color:#c00;}
+
+ #finish {
+    width: 370px;
+    height: 60px;
+    background-color: white;
+    z-index: -7;
+    margin: -31% 0% 0% 0% ;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+ }

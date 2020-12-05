@@ -41,7 +41,7 @@ else :
 	<div id="menu">
 		<dl>
 			<dd><a href="#">Профиль</a></dd>
-			<dd><a href="#">Выйти</a></dd>
+			<dd><a href="signout.php">Выйти</a></dd>
 		</dl>
 	</div>
 
@@ -54,27 +54,30 @@ endif;
 
 </header>
 <div id="cont">
+	<?php
+if($_COOKIE["user"]!=""):
 
-<div id="regform">
-		<form action="php/reg.php" method="post" id="reg_form">
-			<input type="text" name="login" class="login" placeholder="Логин">
-			<input type="text" name="name" class="login" placeholder="Имя">
-			<input type="password" name="pass" class="login" placeholder="Пароль">
-			<input type="submit" name="send" class="but" value="Регистрация">
+?>
+<div id="block">
+		<h2> Вы уверены что хотите выйти из аккаунта ?</h2>
+
+		<p> При нажатии на кнопку "Да" вы будете переброшенны на главную страницу и для пользования ресурсом придется повторно авторизироваться.</p>
+		<p>При наэатии на кнопку "Нет" вы будете возвращены на главную страницу.</p>
+	<div id="vyb">
+		<a href="index.php" ><button class="but"> Нет </button></a>
+		<form action="php/exit.php" method="post" >
+			<input type="submit" name="send" class="but" value="Да">
 		</form>
+	</div>
 </div>
-<div id="sinform">
-		<form action="php/auth.php" method="post" id="sin_form">
-			<input type="text" name="login" class="login" placeholder="Логин">
-			<input type="password" name="pass" class="login" placeholder="Пароль">
-			<input type="submit" name="but" class="but" value="Войти">
-		</form>
 </div>
-
-
-</div>
-
-<script type="text/javascript" src="refresh.js"></script>
+<?php
+else : include "php/headerLoc.php";
+?>
+<?php
+endif;
+?>
+<!-- <script type="text/javascript" src="refresh.js"></script> -->
 
 <script type="text/javascript" src="scripts/header.js"></script>
 
