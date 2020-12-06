@@ -7,7 +7,7 @@ a {
 }
 header {
 	width: 100%;
-	height: 80px;
+	height: 50px;
 	background-color: rgb(00, 2, 66);
 	display: inline-flex;
 	justify-content: center;
@@ -52,7 +52,7 @@ background-color: rgba(0, 0, 0, 0.5);
     z-index: -10;
 }
 #siteLogo {
-	width: 160px;
+	width: 100px;
 	position: absolute;
 
 }
@@ -83,7 +83,7 @@ background-color: rgba(0, 0, 0, 0.5);
 #userLogo{
 margin: 0% 0% 0% -10%;
 position: absolute;
-width: 50px;
+width: 30px;
 border-radius: 100%;
 box-shadow: 0px 0px 15px 1px rgba(4, 255, 0, 1);
 z-index: 1;
@@ -106,7 +106,7 @@ cursor:pointer;
 	margin-top: 30%;
 }
 #nameUser {
-	margin: 0% 0% 0% -100%;
+	margin: 0% 0% 0% 0%;
 	
 
 }

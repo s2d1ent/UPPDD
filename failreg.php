@@ -88,26 +88,6 @@ endif;
 ?>
 
 <?php
-if($_COOKIE["user"]!=""):
-?>
-<script language="javascript">
-            document.location.href="index.php";
-</script>
-<?php
-endif;
-?>
-
-<?php
-if($_COOKIE["user"]==""):
-?>
-<script language="javascript">
-            document.location.href="signin.php";
-</script>
-<?php
-endif;
-?>
-
-<?php
 if($_COOKIE["regfail"]==""):
 ?>
 <script language="javascript">

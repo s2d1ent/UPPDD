@@ -1,6 +1,6 @@
 <?php
 $id=$_COOKIE["id"];
-$time=600;
+$time=3600;
 
 
 include "../php/connect.php";
@@ -17,7 +17,8 @@ setcookie("email",$user["email"],time() + $time,"/");
 setcookie("pts",$user["pts"],time() + $time,"/");
 setcookie("name",$user["name"],time() + $time,"/");
 setcookie("pass",$user["pass"],time() + $time,"/");
-
+setcookie("login",$user["login"],time() + $time,"/");
+setcookie("admin",$user["admin"],time() + $time,"/");
 $pass=base64_decode($_COOKIE["pass"]);
 
 mysqli_close($connection);
@@ -100,20 +101,26 @@ else :
 <div class="block_one">
 
 <p class="block_p"> Если формы для ввода пустые, то перезагрузите страницу </p>
+<p style="color:red;text-align: center;"> Изменение данных паспорта ТОЛЬКО через администрацию платформы. </p>
+<p class="block_p">Unique ID: <?=$_COOKIE['id']?></p>
 <form method="post" action="../php/newdata.php" class="form_change">
 	<div id="radio_dot">
-<p class="form_p"><input type="text" name="name" class="form_change_string"  placeholder="ФИО" value="<?=$_COOKIE['name']?>">  ФИО</p>
-<p class="form_p"><input type="text" name="pass" class="form_change_string" placeholder="Пароль" value="<?=$pass?>"> Пароль</p>
-<p class="form_p"><input type="text" name="passport" class="form_change_string" placeholder="Паспорт" value="<?=$_COOKIE['passport']?>"> Паспорт</p>
-<p class="form_p"><input type="text" name="snils" class="form_change_string" placeholder="СНИЛС" value="<?=$_COOKIE['snils']?>"> СНИЛС</p>
-<p class="form_p"><input type="text" name="numberts" class="form_change_string" placeholder="Номер ТС" value="<?=$_COOKIE['numberts']?>"> Номера ТС</p>
-<p class="form_p"><input type="text" name="save" class="form_change_string" placeholder="Страховка" value="<?=$_COOKIE['save']?>"> Страховка</p>
-<p class="form_p"><input type="text" name="email" class="form_change_string" placeholder="Email" value="<?=$_COOKIE['email']?>"> Email</p>
-<p class="form_p"><input type="text" name="pts" class="form_change_string" placeholder="ПТС" value="<?=$_COOKIE['pts']?>"> ПТС</p>
+<p class="form_p"><input type="text" name="name" required class="form_change_string"  placeholder="ФИО" value="<?=$_COOKIE['name']?>">  ФИО</p>
+<p class="form_p"><input type="text" name="pass" required class="form_change_string" placeholder="Пароль" value="<?=$pass?>"> Пароль</p>
+<p class="form_p"><input type="text" name="passport" disabled required class="form_change_string" placeholder="Паспорт" value="<?=$_COOKIE['passport']?>"> Паспорт</p>
 
+<p class="form_p"><input type="text" name="snils" class="form_change_string" placeholder="СНИЛС" value="<?=$_COOKIE['snils']?>"> СНИЛС</p>
+<p class="form_p"><input type="text" name="numberts" required class="form_change_string" placeholder="Номер ТС" value="<?=$_COOKIE['numberts']?>"> Номера ТС</p>
+<p class="form_p"><input type="text" name="save" class="form_change_string" placeholder="Страховка" value="<?=$_COOKIE['save']?>"> Страховка</p>
+<p class="form_p"><input type="text" name="email" required class="form_change_string" placeholder="Email" value="<?=$_COOKIE['email']?>"> Email</p>
+<p class="form_p"><input type="text" name="pts" class="form_change_string" placeholder="ПТС" value="<?=$_COOKIE['pts']?>"> ПТС</p>
 	</div>
 
+
 <input type="submit" name="send" value="Изменить" class="send">
+</form>
+<form method="post" action="../php/delid.php">
+	<input type="submit" name="deleted" value="Удалить аккаунт" class="deleted">
 </form>
 </div>
 
