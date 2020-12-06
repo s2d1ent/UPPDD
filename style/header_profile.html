@@ -1,0 +1,90 @@
+<header>
+
+
+
+<?php
+if($_COOKIE["admin"]=="" || $_COOKIE["admin"]=="0"):
+
+?>
+
+
+			<div id="siteLogoDiv">
+				<a href="/" id="siteLogoA">
+			<img src="../src/loopaT.png" id="siteLogo">
+				</a>
+			</div>
+		<nav id="nav" >
+		<a href="/" id="nav_a_one" class="nav_p" class="nav_p_o">Главная </a>
+		<a href="" id="nav_a_two" class="nav_p">История </a>
+		<a href="" id="nav_a_three" class="nav_p">Профиль </a>	
+
+
+
+
+		</nav>
+<?php
+endif;
+
+?>
+
+<?php
+if ($_COOKIE["admin"]=="1" || $_COOKIE["admin"]=="2" || $_COOKIE["admin"]=="3" ):
+
+?>
+			<div id="siteLogoDiv">
+				<a href="/" id="siteLogoA">
+			<img src="..//src/loopaT.png" id="siteLogo">
+				</a>
+			</div>
+		<nav id="nav" >
+		<a href="/" id="nav_a_one" class="nav_p" class="nav_p_o">Главная </a>
+		<a href="" id="nav_a_two" class="nav_p">История </a>
+		<a href="" id="nav_a_three" class="nav_p">Профиль </a>	
+
+
+
+		<a href="" id="admin_panel" class="nav_p">Админ панель </a>	
+		</nav>
+<?php
+endif;
+
+?>
+
+
+
+
+
+
+<?php
+if($_COOKIE["user"]==""):
+
+?>
+ 		<div id="auth">
+			<a href="../signin.php"> Sign in </a>
+		</div> 
+<?php
+else :
+?>
+<div id="auth">
+	<p id="nameUser">
+	<?=
+	$_COOKIE["user"];
+	?></p>
+	<img src="../src/user.png" id="userLogo">
+	<div id="menu">
+		<dl>
+			
+			<dd><a href="#" id="profile">Профиль</a></dd>
+			<dd><a href="../signout.php">Выйти</a></dd>
+		</dl>
+	</div><!--  MENU  -->
+
+</div> <!--  AUTH  -->
+
+<?php
+endif;
+?>
+
+
+</header>
+<script type="text/javascript" src="../scripts/header_not_koren.js"></script>

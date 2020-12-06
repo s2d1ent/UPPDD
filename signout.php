@@ -15,48 +15,14 @@
 <body>
 <img src="src/back.jpg" id="back">
 <div id="black"></div>
-<header>
-			<div id="siteLogoDiv">
-				<a href="/" id="siteLogoA">
-			<img src="src/loopaT.png" id="siteLogo">
-				</a>
-			</div>
-		<nav id="nav" >
-		<a href="index.php" id="nav_a_one" class="nav_p" class="nav_p_o">Главная </a>
-		<a href="#" id="nav_a_two" class="nav_p">История </a>
-		<a href="#" id="nav_a_three" class="nav_p">Профиль </a>		
-		</nav>
-<?php
-if($_COOKIE["user"]==""):
 
-?>
- 		<div id="auth">
-			<a href="signin.php"> Sign in </a>
-		</div> 
-<?php
-else :
-?>
-<div id="auth">
-		<p id="nameUser">
-	<?=
-	$_COOKIE["user"];
-	?></p>
-	<img src="src/user.png" id="userLogo">
-	<div id="menu">
-		<dl>
-			<dd><a href="#" id="profile">Профиль</a></dd>
-			<dd><a href="signout.php">Выйти</a></dd>
-		</dl>
-	</div>
-
-	</div>
 
 <?php
-endif;
+include "style/header.html";
 ?>
 
 
-</header>
+
 <div id="cont">
 	<?php
 if($_COOKIE["user"]!=""):
@@ -83,7 +49,7 @@ endif;
 ?>
 <!-- <script type="text/javascript" src="refresh.js"></script> -->
 
-<script type="text/javascript" src="scripts/header.js"></script>
+
 
 </body>
 </html>
