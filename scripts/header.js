@@ -7,15 +7,16 @@ var userlogo=doc.getElementById("userLogo"),
 	profile=doc.getElementById("profile"),
 	nav_a_two=doc.getElementById("nav_a_two"),
 	nav_a_one=doc.getElementById("nav_a_one"),
-	nav_a_three=doc.getElementById("nav_a_three"),
-	admin_panel=doc.getElementById("admin_panel");
+	nav_a_three=doc.getElementById("nav_a_three");
+	
 
 profile.setAttribute("href","profile/my.php");
 
 nav_a_one.setAttribute("href","/");
 nav_a_three.setAttribute("href","profile/my.php");
 
-
+var admin_panel=doc.getElementById("admin_panel");
+admin_panel.setAttribute("href","admin_panel.php");
 
 userlogo.addEventListener("click",function () {
 	a=i%2;
@@ -32,7 +33,7 @@ if (a==0){
 		menu.style.marginTop="-70%";
 		
 }
-admin_panel.setAttribute("href","admin_panel.php");
+
 
 
 /*nav_a_two.setAttribute("href","profile/my.php");*/

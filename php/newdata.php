@@ -12,7 +12,6 @@ $id=$_COOKIE["id"];
 /*print_r($_COOKIE);
 print_r($_POST);*/
 
-	if($name =="")
 
 
 

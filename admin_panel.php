@@ -31,10 +31,10 @@ if ($_COOKIE["admin"]=="1" || $_COOKIE["admin"]=="2" || $_COOKIE["admin"]=="3" )
 <div id="block_one">
 
 	<div class="block_one_panel">
-		<h2 class="block_one_panel_p">Изменение данных USER</h2>
+		<h2 class="block_one_panel_p">Изменение данных USER, скрипт недописан</h2>
 		<form method="post" action="adminPHP/admin_change.php" class="form">
 			<input type="text" name="user_id" class="text_form" placeholder="Unique User ID">
-			<input type="text" name="what" class="text_form" placeholder="Что заменить, пример:pass,email...">
+			<input type="text" name="what" class="text_form" placeholder="Что заменить, пример:пароль,email...">
 			<input type="text" name="towhat" class="text_form" placeholder="На что заменить:qwerty,qwe@mail.ru...">
 			<input type="submit" name="send" class="submit" value="Изменить">
 
@@ -68,7 +68,7 @@ if ($_COOKIE["admin"]=="1" || $_COOKIE["admin"]=="2" ):
 			<h2 class="block_one_panel_p">Выдача прав администрирования USER</h2>
 		<form method="post" action="adminPHP/admin_add.php" class="form">
 			<input type="text" name="user_id" class="text_form" placeholder="Unique User ID">
-			<input type="text" name="admin" class="text_form" disabled value="1">
+			<input type="text" name="role" class="text_form"  value="1">
 			<input type="submit" name="send" class="submit" value="Изменить">
 
 		</form>
@@ -80,9 +80,9 @@ if ($_COOKIE["admin"]=="1" || $_COOKIE["admin"]=="2" ):
 
 <div class="block_one_panel">
 			<h2 class="block_one_panel_p">Снятие прав администрирования USER</h2>
-		<form method="post" action="adminPHP/admin_remove.php" class="form">
+		<form method="post" action="adminPHP/admin_add.php" class="form">
 			<input type="text" name="user_id" class="text_form" placeholder="Unique User ID">
-			<input type="text" name="admin" class="text_form" disabled value="0">
+			<input type="text" name="role" class="text_form" disabled value="0">
 			<input type="submit" name="send" class="submit" value="Изменить">
 
 		</form>
@@ -97,7 +97,7 @@ if ($_COOKIE["admin"]=="3" ):
 			<h2 class="block_one_panel_p">Корректировка прав администрирования USER</h2>
 		<form method="post" action="adminPHP/admin_add.php" class="form">
 			<input type="text" name="user_id" class="text_form" placeholder="Unique User ID">
-			<input type="text" name="admin" class="text_form"  placeholder="Введите уровень доступа">
+			<input type="text" name="role" class="text_form"  placeholder="Введите уровень доступа">
 			<input type="submit" name="send" class="submit" value="Изменить">
 
 		</form>
@@ -162,7 +162,7 @@ endif;
 
 
 <footer></footer>
-<script type="text/javascript" src="refresh.js"></script>
+<!-- <script type="text/javascript" src="refresh.js"></script> -->
 </body>
 </html>
 <?php

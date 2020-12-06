@@ -15,10 +15,10 @@ $send=$_POST["send"];
 
 		echo "Введите корректный логин";
 		exit();
-	}  else if(mb_strlen($name) < 3 || mb_strlen($name)>20) {
+	}  else if(mb_strlen($name) < 3 || mb_strlen($name)>60) {
 		echo "Введите корректное имя";
 		exit();
-	} else if(mb_strlen($pass) < 3 || mb_strlen($pass)>15) {
+	} else if(mb_strlen($pass) < 3 || mb_strlen($pass)>30) {
 		echo "Введите корректный пароль";
 		exit();
 	} else {
