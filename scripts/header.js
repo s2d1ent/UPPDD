@@ -16,7 +16,10 @@ nav_a_one.setAttribute("href","/");
 nav_a_three.setAttribute("href","profile/my.php");
 
 var admin_panel=doc.getElementById("admin_panel");
+
+if (admin_panel!==null) {
 admin_panel.setAttribute("href","admin_panel.php");
+}
 
 userlogo.addEventListener("click",function () {
 	a=i%2;

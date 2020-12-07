@@ -2,7 +2,7 @@
 
 	$host="localhost";
 	$username="root";
-	$bdpassword="root";
+	$bdpassword="";
 	$dbname="registerbd";
 	
 ?>

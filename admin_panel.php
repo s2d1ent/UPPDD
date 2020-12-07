@@ -31,9 +31,9 @@ if ($_COOKIE["admin"]=="1" || $_COOKIE["admin"]=="2" || $_COOKIE["admin"]=="3" )
 <div id="block_one">
 
 	<div class="block_one_panel">
-		<h2 class="block_one_panel_p">Изменение данных USER, скрипт недописан</h2>
+		<h2 class="block_one_panel_p">Изменение данных USER</h2>
 		<form method="post" action="adminPHP/admin_change.php" class="form">
-			<input type="text" name="user_id" class="text_form" placeholder="Unique User ID">
+			<input type="text" name="user_id" class="text_form" placeholder="Unique User ID" maxlength="11" min="0">
 			<input type="text" name="what" class="text_form" placeholder="Что заменить, пример:пароль,email...">
 			<input type="text" name="towhat" class="text_form" placeholder="На что заменить:qwerty,qwe@mail.ru...">
 			<input type="submit" name="send" class="submit" value="Изменить">
@@ -157,7 +157,6 @@ endif;
 		<h2 class="block_one_panel_p">Оповещение USER о правонарушении</h2>
 		<form method="post" action="adminPHP/admin_fail_notif.php" class="form">
 			<input type="text" name="user_id" class="text_form" placeholder="Unique User ID">
-			<input type="text" name="fail" class="text_form" readonly value="У вас есть новое/неоплаченое правонарушение. Загляните в свой личный кабинет на платферме <ссылка на сайт>">
 			<input type="submit" name="send" class="submit" value="Отправить">
 
 		</form>

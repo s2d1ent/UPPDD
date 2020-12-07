@@ -3,6 +3,9 @@ $user_id=$_POST["user_id"];
 $ufid=$_POST["ufid"];
 $status=$_POST["status"];
 
+$test_user_id=is_numeric($user_id);
+$test_ufid=is_numeric($ufid);
+
 if ($status!="Неоплачено" && $status!="Оплачено") {
 	echo "Введите нормальный статус";
 	exit();
@@ -18,26 +21,33 @@ if ($user_id<0) {
 		exit();
 
 	}
-
+	if ($test_user_id==false) {
+		echo "Введено неправильное значение Unique User ID. Подсказка: является числом";
+		exit();
+	}
+	if ($test_ufid==false) {
+		echo "Введено неправильное значение Unique Fail ID. Подсказка: является числом";
+		exit();
+	}
 	
 
 
-/*	include "../php/connect.php";// переменные для коннекта
+	include "../php/connect.php";// переменные для коннекта
 
 	$connection=mysqli_connect($host,$username,$bdpassword);
 	$select=mysqli_select_db($connection,$dbname);
 
 
-	$query= "INSERT INTO `story`(`id`, `date`, `time`, `status`, `prich`) VALUES ('$user_id','$date','$time','$status','$prich')";
+	$query="UPDATE `story` SET `status`='$status' WHERE `id`='$user_id' &&  `ufid`='$ufid'";
 	$result=mysqli_query($connection,$query);
 
 
 
 	if ($result==true) {
-		echo "Данные были успешно занесены в БД";
+		echo "Данные были успешно занесены в БД.";
 	} else {
 		echo "Произошла ошибка. Данные не были добавлены в БД.";
-	}*/
+	}
 
 
 

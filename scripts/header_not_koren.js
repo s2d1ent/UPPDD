@@ -17,7 +17,9 @@ nav_a_three.setAttribute("href","my.php");
 
 
 var admin_panel=doc.getElementById("admin_panel");
-admin_panel.setAttribute("href","../admin_panel.php");
+if (admin_panel!==null) {
+admin_panel.setAttribute("href","admin_panel.php");
+}
 
 userlogo.addEventListener("click",function () {
 	a=i%2;
@@ -38,7 +40,7 @@ if (a==0){
 profile.setAttribute("href","my.php");
 
 
-admin_panel.setAttribute("href","../admin_panel.php");
+
 
 
 /*	if (a=0) {

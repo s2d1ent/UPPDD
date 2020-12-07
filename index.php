@@ -27,16 +27,12 @@ include "style/header.html";
 <div id="op">
 	<h1 id="op_h"> Записка: </h1>
 	<p id="op_p"> Данный проект является реализацией технического задания созданного в процессе учебной практики. Проект создан студентом 2ИСП Тюменевым Виктором. Псевдоним в сети интернет "s2d1ent". </p>
-	<div id="link">
-		<img src="src/vk.png" id="vk">
-		<img src="src/github.png" id="github">
+
 
 		<img src="src/s2dLogo.jpg" id="logo">
 
-		<img src="src/logo.png" id="lazycote">
-		<img src="src/twitch.png" id="twitch">
 
-	</div>
+
 
 </div>
 
