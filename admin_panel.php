@@ -68,7 +68,7 @@ if ($_COOKIE["admin"]=="1" || $_COOKIE["admin"]=="2" ):
 			<h2 class="block_one_panel_p">Выдача прав администрирования USER</h2>
 		<form method="post" action="adminPHP/admin_add.php" class="form">
 			<input type="text" name="user_id" class="text_form" placeholder="Unique User ID">
-			<input type="text" name="role" class="text_form"  value="1">
+			<input type="text" name="role" class="text_form" readonly value="1">
 			<input type="submit" name="send" class="submit" value="Изменить">
 
 		</form>
@@ -82,7 +82,7 @@ if ($_COOKIE["admin"]=="1" || $_COOKIE["admin"]=="2" ):
 			<h2 class="block_one_panel_p">Снятие прав администрирования USER</h2>
 		<form method="post" action="adminPHP/admin_add.php" class="form">
 			<input type="text" name="user_id" class="text_form" placeholder="Unique User ID">
-			<input type="text" name="role" class="text_form" disabled value="0">
+			<input type="text" name="role" class="text_form" readonly value="0">
 			<input type="submit" name="send" class="submit" value="Изменить">
 
 		</form>
@@ -119,10 +119,14 @@ endif;
 		<h2 class="block_one_panel_p">Занесение правонарушения USER</h2>
 		<form method="post" action="adminPHP/admin_fail_add.php" class="form">
 			<input type="text" name="user_id" class="text_form" placeholder="Unique User ID">
-			<input type="text" name="date" class="text_form" placeholder="Дата">
-			<input type="text" name="time" class="text_form" placeholder="Время">
-			<input type="text" name="status" class="text_form" placeholder="Статус">
-			<input type="submit" name="send" class="submit" value="Добавить">
+			<input type="text" name="date" class="text_form" value="ГГГГ-ММ-ДД" placeholder="Дата">
+			<input type="text" name="time" class="text_form" value="ЧЧ:ММ" placeholder="Время">
+			<!-- <input type="text" value="Оплачено/Неоплачено" name="status" class="text_form"  placeholder="Статус"> -->
+			<input type="text" name="prich" class="text_form" placeholder="Причина штрафования">
+			<select name="status" class="text_form" readonly style="text-align: center;">
+				<option>Неоплачено</option>
+			</select>
+			<input type="submit"  name="send" class="submit" value="Добавить">
 
 		</form>
 	</div>
@@ -136,7 +140,10 @@ endif;
 		<form method="post" action="adminPHP/admin_fail_status.php" class="form">
 			<input type="text" name="user_id" class="text_form" placeholder="Unique User ID">
 			<input type="text" name="ufid" class="text_form" placeholder="Unique Fail ID">
-			<input type="text" name="status" class="text_form" placeholder="Статус">
+			<select name="status" class="text_form" readonly style="text-align: center;">
+				<option>Оплачено</option>
+				<option>Неоплачено</option>
+			</select>
 			<input type="submit" name="send" class="submit" value="Изменить">
 
 		</form>
@@ -148,9 +155,9 @@ endif;
 
 <div class="block_one_panel">
 		<h2 class="block_one_panel_p">Оповещение USER о правонарушении</h2>
-		<form method="post" action="adminPHP/admin_failstatus.php" class="form">
-			<input type="text" name="to" class="text_form" placeholder="Unique User ID">
-			<input type="text" name="fail" class="text_form" disabled value="У вас есть новое/неоплаченое правонарушение. Загляните в свой личный кабинет на платферме <ссылка на сайт>">
+		<form method="post" action="adminPHP/admin_fail_notif.php" class="form">
+			<input type="text" name="user_id" class="text_form" placeholder="Unique User ID">
+			<input type="text" name="fail" class="text_form" readonly value="У вас есть новое/неоплаченое правонарушение. Загляните в свой личный кабинет на платферме <ссылка на сайт>">
 			<input type="submit" name="send" class="submit" value="Отправить">
 
 		</form>

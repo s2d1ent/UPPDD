@@ -2,7 +2,7 @@
 $login=filter_var(trim($_POST["login"]),FILTER_SANITIZE_STRING);
 $name=filter_var(trim($_POST["name"]),FILTER_SANITIZE_STRING);
 $pass=filter_var(trim($_POST["pass"]),FILTER_SANITIZE_STRING);
-
+$time=3600 * 3;
 	$pass=base64_encode($pass);
 
 	include "connect.php";
@@ -17,9 +17,9 @@ if(count($user)==0){
 	exit();
 }
 
-setcookie("user",$user["name"],time() + 3600,"/");
-setcookie("id",$user["id"],time() + 3600,"/");
-setcookie("admin",$user["admin"],time() + 3600 ,"/");
+setcookie("user",$user["name"],time() + $time,"/");
+setcookie("id",$user["id"],time() + $time,"/");
+setcookie("admin",$user["admin"],time() + $time ,"/");
 
 	mysqli_close($connection);
 

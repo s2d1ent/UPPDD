@@ -1,11 +1,30 @@
 <?php
+
+
 $user_id=$_POST["user_id"];
 $role=$_POST["role"];
 
-print_r($_POST);
+$test=is_numeric($user_id);
+	if ($test==false) {
+		echo "Введены не правильные данные";
+		exit();
+	}
 
-echo "<br/>"." $user_id ";
-echo "<br/>"." $admin";
+	if ($role>3 || $role <0) {
+		echo "Введено не верно значение прав администрирования";
+		exit();
+	}
+
+	if ($user_id<0) {
+		echo "Введены не правильные данные";
+		exit();
+	}
+
+	if (mb_strlen($user_id)==0 || mb_strlen($user_id)>11) {
+		echo "Введено слишком большое кол-во символов в поле Unique User ID. Подсказка: колво символов в Unique User ID не превышает 11 символов";
+		exit();
+
+	}
 
 
 	include "../php/connect.php";// переменные для коннекта
@@ -18,8 +37,12 @@ echo "<br/>"." $admin";
 	$result=mysqli_query($connection,$query);
 
 
-	echo "<br/>"."Результат выполнения $query ";
-	echo "<br/>"."Результат передачи файлов: $result";
+
+	if ($result==true) {
+		echo "Права администрирования были успешно изменены. Пожалуйста, вернитесь в админ панель.";
+	} else {
+		echo "Произошла ошибка. Невернно введенные данные";
+	}
 
 
 
