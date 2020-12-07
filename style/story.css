@@ -1,0 +1,26 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: 0;
+}
+body {
+	display: flex;
+	flex-flow: wrap;
+	justify-content: center;
+}
+
+#block {
+	width: 60%;
+	height: 600px;
+	background-color: white;
+	margin: 10% 0% 0% 0%;
+	border-radius: 15px;
+	display: inline-flex;
+	align-items: center;
+	flex-direction: column;
+	
+}
+
+#user-id {
+	color: black;
+}

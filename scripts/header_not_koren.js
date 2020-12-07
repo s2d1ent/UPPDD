@@ -2,7 +2,8 @@ var doc=document,
 	wiw=window,
 	i=1;
 var a=i%2;
-var userlogo=doc.getElementById("userLogo"),
+var back=doc.getElementById("back"),
+	userlogo=doc.getElementById("userLogo"),
 	menu=doc.getElementById("menu"),
 	profile=doc.getElementById("profile"),
 	nav_a_two=doc.getElementById("nav_a_two"),
@@ -10,15 +11,18 @@ var userlogo=doc.getElementById("userLogo"),
 	nav_a_three=doc.getElementById("nav_a_three");
 
 
-profile.setAttribute("href","../profile/my.php");
+
+
+
+profile.setAttribute("href","../profile/index.php");
 
 nav_a_one.setAttribute("href","/");
-nav_a_three.setAttribute("href","my.php");
+nav_a_three.setAttribute("href","index.php");
 
 
 var admin_panel=doc.getElementById("admin_panel");
 if (admin_panel!==null) {
-admin_panel.setAttribute("href","admin_panel.php");
+admin_panel.setAttribute("href","../admin_panel.php");
 }
 
 userlogo.addEventListener("click",function () {
@@ -37,7 +41,7 @@ if (a==0){
 		
 }
 
-profile.setAttribute("href","my.php");
+profile.setAttribute("href","index.php");
 
 
 

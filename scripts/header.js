@@ -9,11 +9,14 @@ var userlogo=doc.getElementById("userLogo"),
 	nav_a_one=doc.getElementById("nav_a_one"),
 	nav_a_three=doc.getElementById("nav_a_three");
 	
+var back=doc.getElementById("back");
 
-profile.setAttribute("href","profile/my.php");
+
+
+profile.setAttribute("href","profile/index.php");
 
 nav_a_one.setAttribute("href","/");
-nav_a_three.setAttribute("href","profile/my.php");
+nav_a_three.setAttribute("href","profile/index.php");
 
 var admin_panel=doc.getElementById("admin_panel");
 

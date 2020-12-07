@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 07 2020 г., 12:05
+-- Время создания: Дек 08 2020 г., 01:33
 -- Версия сервера: 10.3.22-MariaDB-log
 -- Версия PHP: 7.1.33
 
@@ -59,7 +59,7 @@ CREATE TABLE `users` (
   `snils` int(32) UNSIGNED NOT NULL,
   `save` int(32) UNSIGNED NOT NULL,
   `numberts` varchar(20) NOT NULL,
-  `email` varchar(30) NOT NULL,
+  `email` varchar(100) NOT NULL,
   `admin` int(1) NOT NULL,
   `pts` varchar(20) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -73,7 +73,8 @@ INSERT INTO `users` (`id`, `login`, `pass`, `name`, `passport`, `snils`, `save`,
 (36, 'admin', 'c2VjcmV0cGFzcw==', 'admin', 0, 0, 0, '0', 'tumenev33@mail.ru', 3, '0'),
 (40, '123123', 'MTIzMTIz', 'Андрей Андрейка', 0, 0, 0, '0', 'andr.andreyka1337@mail.ru', 0, '0'),
 (37, 'йцукен', 'MTIz', '123', 0, 0, 123, '', '', 0, ''),
-(41, 'admin1', 'c2VjcmV0cGFzcw==', 'admin1', 0, 0, 0, '0', 'admin1@mail.ru', 1, '0');
+(41, 'admin1', 'c2VjcmV0cGFzcw==', 'admin1', 0, 0, 0, '0', 'admin1@mail.ru', 1, '0'),
+(45, 'йцукен', '0LnRhtGD0LrQtdC9', 'йцукен', 0, 0, 0, '0', 'wqeq@mail.ru', 0, '0');
 
 --
 -- Индексы сохранённых таблиц
@@ -105,7 +106,7 @@ ALTER TABLE `story`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -22,7 +22,15 @@ if ($_COOKIE["admin"]=="1" || $_COOKIE["admin"]=="2" || $_COOKIE["admin"]=="3" )
 <img src="src/admin_back.jpg" id="back">
 <div id="black"></div>
 
+<header>
+		
 
+		
+		<nav id="nav" >
+		<a href="/" id="nav_a_one" class="nav_p" class="nav_p_o"> Главная </a>
+		</nav>
+
+</header>
 
 
 <div id="block" >
@@ -58,6 +66,8 @@ if ($_COOKIE["admin"]=="1" || $_COOKIE["admin"]=="2" || $_COOKIE["admin"]=="3" )
 </div>
 
 <img src="src/work.jpg" id="work">
+
+
 
 <div id="block_two">
 <div id="block_two_one">

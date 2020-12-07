@@ -41,7 +41,7 @@ mysqli_close($connection);
 
 </head>
 <body>
-<img src="../src/back.jpg" id="back">
+<img  src="../src/back2.jpg" id="back">
 <div id="black"></div>
 
 
