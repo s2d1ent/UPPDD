@@ -9,6 +9,14 @@ $select=mysqli_select_db($connection,$dbname);
 $result = mysqli_query($connection,"SELECT * FROM `users` WHERE  id='".$id."'");
 $user=mysqli_fetch_assoc($result);
 
+$name=$user["name"];
+$numberts=$user["numberts"];
+$save=$user["save"];
+$snils=$user["snils"];
+$passport=$user["passport"];
+$email=$user["email"];
+$pts=$user["pts"];
+
 setcookie("passport",$user["passport"],time() + $time,"/");
 setcookie("snils",$user["snils"],time() + $time,"/");
 setcookie("save",$user["save"],time() + $time,"/");
@@ -16,6 +24,30 @@ setcookie("numberts",$user["numberts"],time() + $time,"/");
 setcookie("email",$user["email"],time() + $time,"/");
 setcookie("pts",$user["pts"],time() + $time,"/");
 mysqli_close($connection);
+
+
+	include "../php/connect.php";
+
+	$connection=mysqli_connect($host,$username,$bdpassword);
+	$select=mysqli_select_db($connection,$dbname);
+
+$query="SELECT * FROM `story` WHERE  `id`='$id' ";
+$result = mysqli_query($connection,$query);
+$i=1;
+
+$row=mysqli_fetch_array($result);
+
+$row_id=$row['id'];
+$row_date=$row['date'];
+$row_time=$row['time'];
+$row_ufid=$row['ufid'];
+$row_status=$row['status'];
+$row_prich=$row['prich'];
+$row_money=$row['money'];
+
+mysqli_close($connection);
+
+
 
 
 ?>
@@ -45,7 +77,7 @@ include "../style/header_profile.html";
 
 
 <div id="block">
-	<h2 id="user-id"> Unique ID: <?=$_COOKIE["id"] ?> | <?=$_COOKIE["email"] ?> </h2>
+	<h2 id="user-id"> Unique ID: <?=$id ?> | <?=$email ?> </h2>
 	<div class="hr"></div>
 	
 	<div id="block_line">  
@@ -53,25 +85,22 @@ include "../style/header_profile.html";
 
 		<table id="data">
 			<tr>
-			<td>ФИО: </td> <th><?=$_COOKIE["user"]?></th> 
+			<td>ФИО: </td> <th><?=$name?></th> 
 			</tr>
 			<tr>
-			<td>Паспорт: </td> <th><?=$_COOKIE["passport"]?></th> 
+			<td>Паспорт: </td> <th><?=$passport?></th> 
 			</tr>
 			<tr>
-			<td>СНИЛС: </td> <th><?=$_COOKIE["snils"]?></th> 
+			<td>СНИЛС: </td> <th><?=$snils?></th> 
 			</tr>
 			<tr>
-			<td>Страховка: </td> <th><?=$_COOKIE["save"]?></th> 
+			<td>Страховка: </td> <th><?=$save?></th> 
 			</tr>
 			<tr>
-			<td>Номера ТС: </td> <th><?=$_COOKIE["numberts"]?></th> 
+			<td>Номера ТС: </td> <th><?=$numberts?></th> 
 			</tr>
 			<tr>
-			<td>Номер ПТС: </td> <th><?=$_COOKIE["pts"]?></th> 
-			</tr>
-			<tr>
-			<td>Паспорт: </td> <th><?=$_COOKIE["passport"]?></th> 
+			<td>Номер ПТС: </td> <th><?=$pts?></th> 
 			</tr>
 		</table>
 
@@ -102,6 +131,54 @@ include "../style/header_profile.html";
 
 
 
+	<h2 id="user-id"> Unique ID: <?=$_COOKIE["id"] ?> | ФИО: <?=$_COOKIE["user"] ?> </h2>
+	<div id="table_block">
+		<table id="tab_stor">
+	<tr >
+		<td>Номер</td>
+		<td>Unique User ID</td>
+		<td>Unique Fail ID</td>
+		<td>Дата</td>
+		<td>Время</td>
+		<td>Причина</td>
+		<td>Статус</td>
+		<td>Расчет</td>
+
+	</tr>
+	<tr class="td">
+		<td class="td"><?=$i++ ?></td>
+		<td class="td"><?=$row['id'] ?></td>
+		<td class="td"><?=$row['ufid']?></td>
+		<td class="td"><?=$row['date'] ?></td>
+		<td class="td"><?=$row['time']?></td>
+		<td class="td"><?=$row['prich'] ?></td>
+		<td class="td"><?=$row['status'] ?></td>
+		<td class="td"><?=$row['money'] ?></td>
+	</tr>
+<?php
+while ($row=mysqli_fetch_array($result)):
+
+?>
+<tr class="td">
+		<td class="td"><?=$i++ ?></td>
+		<td class="td"><?=$row['id'] ?></td>
+		<td class="td"><?=$row['ufid']?></td>
+		<td class="td"><?=$row['date'] ?></td>
+		<td class="td"><?=$row['time']?></td>
+		<td class="td"><?=$row['prich'] ?></td>
+		<td class="td"><?=$row['status'] ?></td>
+		<td class="td"><?=$row['money'] ?></td>
+	</tr>
+
+
+
+
+
+<?php
+endwhile;
+?>
+
+</table>
 
 
  </div>

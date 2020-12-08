@@ -118,3 +118,8 @@ dd, dt {
 	color: yellow;	
 	text-shadow: 0px 0px 10px yellow;
 }
+#exit {
+
+	margin: 0% 0% 0% 0%;
+	color: red;
+}

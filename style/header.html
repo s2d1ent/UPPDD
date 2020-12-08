@@ -63,19 +63,14 @@ if($_COOKIE["user"]==""):
 <?php
 else :
 ?>
+
 <div id="auth">
-	<p id="nameUser">
-	<?=
-	$_COOKIE["user"];
-	?></p>
+	
+	<a id="exit" href="signout.php" style="display: none;">Выйти</a>
+
 	<img src="src/user.png" id="userLogo">
-	<div id="menu">
-		<dl>
+
 			
-			<dd><a href="#" id="profile">Профиль</a></dd>
-			<dd><a href="signout.php">Выйти</a></dd>
-		</dl>
-	</div><!--  MENU  -->
 
 </div> <!--  AUTH  -->
 

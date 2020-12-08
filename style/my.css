@@ -68,28 +68,14 @@ footer {
 	color: black;
 	margin: 2% 0% 0% 0%;
 }
-#story {
-	width: 85%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
 
-}
-
-td {
-/*	border: 1px solid black;*/
-	font-family: Helvetica, Arial;
-	font-size: 20px;
-
-}
 #data {
 	margin: 0% 0% 0% 2%;
 }
 #data-two {
 	margin: 0% 0% 0% 8%;
 }
-th {
+th,td {
 /*	border: 1px solid black;*/
 	font-family: Helvetica, Arial;
 	font-size: 20px;
@@ -193,9 +179,51 @@ th {
 }
 
 
+#table_block {
+		border-radius: 15px;
+	width: 100%;
 
-/* СВЕРХ МЕНЮ ДЛЯ ЧЕНДЖА */
+	margin: 2% 0% 0% 0% ;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+}
+#tab_story {
 
 
+	border-left:2px solid black;
+	border-right: 2px solid black;
+	margin: 2% 0% 0% 0%;
+}
+.st_td {
+
+width:1%;
+height: 100px;
+border-bottom:2px solid black;
+}
+.tr:hover {
+background-color: yellow;
 
 
+}
+
+#tab_stor {
+
+
+	border-left:2px solid black;
+	border-right: 2px solid black;
+	margin: 2% 0% 0% 0%;
+	background-color: white;
+}
+.td {
+
+width:1%;
+height: 100px;
+border-bottom:2px solid black;
+}
+
+.td:hover {
+background-color: yellow;
+
+
+}

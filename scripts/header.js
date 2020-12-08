@@ -3,20 +3,14 @@ var doc=document,
 	i=1;
 var a=i%2;
 var userlogo=doc.getElementById("userLogo"),
-	menu=doc.getElementById("menu"),
-	profile=doc.getElementById("profile"),
+	exit=doc.getElementById("exit"),
 	nav_a_two=doc.getElementById("nav_a_two"),
 	nav_a_one=doc.getElementById("nav_a_one"),
 	nav_a_three=doc.getElementById("nav_a_three");
-	
-var back=doc.getElementById("back");
-
-
-
-profile.setAttribute("href","profile/index.php");
 
 nav_a_one.setAttribute("href","/");
 nav_a_three.setAttribute("href","profile/index.php");
+nav_a_two.setAttribute("href","story.php");
 
 var admin_panel=doc.getElementById("admin_panel");
 
@@ -30,35 +24,16 @@ userlogo.addEventListener("click",function () {
 
 if (a==1){
 
-		menu.style.marginTop="10%";
+		exit.style.display="block";
 	
 
 }
 if (a==0){
 
-		menu.style.marginTop="-70%";
+		exit.style.display="none";
 		
 }
 
-
-
-/*nav_a_two.setAttribute("href","profile/my.php");*/
-
-
-/*	if (a=0) {
-		a=i%2;
-		i++;
-		console.log(i);
-		menu.style.marginTop="10%";
-		break;
-	}
-	if (a=1) {
-		a=i%2;
-		i++;
-		console.log(i);
-		menu.style.marginTop="-10%";
-		break;	
-	}*/
 
 
 

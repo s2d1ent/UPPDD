@@ -4,7 +4,9 @@ $date=$_POST["date"];
 $time=$_POST["time"];
 $prich=$_POST["prich"];
 $status=$_POST["status"];
+$money=$_POST["money"];
 
+$test_money=is_numeric($money);
 if ($status!="Неоплачено") {
 	echo "Введите нормальный статус";
 	exit();
@@ -36,6 +38,14 @@ if ($user_id<0) {
 		exit();
 
 	}
+	if ($money=="" || mb_strlen($money)<3 || mb_strlen($money)>6 || $test_money==false) {
+		echo "Введено неправильную сумму. Подсказка: не менее 3 и не более 5 символов, вводить только число, без указания \" р\" или \" руб\"  ";
+		exit();
+
+	}
+
+
+
 
 	include "../php/connect.php";// переменные для коннекта
 
@@ -43,13 +53,14 @@ if ($user_id<0) {
 	$select=mysqli_select_db($connection,$dbname);
 
 
-	$query= "INSERT INTO `story`(`id`, `date`, `time`, `status`, `prich`) VALUES ('$user_id','$date','$time','$status','$prich')";
+	$query= "INSERT INTO `story`(`id`, `date`, `time`, `status`, `prich`, `money`) VALUES ('$user_id','$date','$time','$status','$prich', '$money')";
 	$result=mysqli_query($connection,$query);
 
 
 
 	if ($result==true) {
 		echo "Данные были успешно занесены в БД";
+		print_r($result);
 	} else {
 		echo "Произошла ошибка. Данные не были добавлены в БД.";
 	}

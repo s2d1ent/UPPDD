@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Дек 08 2020 г., 01:33
+-- Время создания: Дек 09 2020 г., 01:27
 -- Версия сервера: 10.3.22-MariaDB-log
 -- Версия PHP: 7.1.33
 
@@ -30,19 +30,25 @@ SET time_zone = "+00:00";
 CREATE TABLE `story` (
   `id` int(11) UNSIGNED NOT NULL,
   `date` date NOT NULL,
-  `time` time(6) NOT NULL,
+  `time` varchar(5) CHARACTER SET utf8 NOT NULL,
   `ufid` int(11) UNSIGNED NOT NULL,
   `status` varchar(100) CHARACTER SET utf8 NOT NULL,
-  `prich` varchar(1000) CHARACTER SET utf8 NOT NULL
+  `prich` varchar(1000) CHARACTER SET utf8 NOT NULL,
+  `money` int(11) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Дамп данных таблицы `story`
 --
 
-INSERT INTO `story` (`id`, `date`, `time`, `ufid`, `status`, `prich`) VALUES
-(37, '2020-12-07', '12:23:00.000000', 1, 'Неоплачено', 'Превышение скорости на 20км/ч на участке с ограничением в 60км/ч'),
-(37, '2020-12-07', '12:23:00.000000', 2, 'Неоплачено', 'Превышение скорости на 20км/ч на участке с ограничением в 60км/ч');
+INSERT INTO `story` (`id`, `date`, `time`, `ufid`, `status`, `prich`, `money`) VALUES
+(36, '2020-12-12', '12:12', 16, 'Неоплачено', 'Превышение скорости на 20км/ч на участке с ограничением в 60км/ч', 9000),
+(36, '2020-12-12', '12:12', 17, 'Неоплачено', 'Превышение скорости на 20км/ч на участке с ограничением в 60км/ч', 500),
+(36, '2020-12-12', '12:12', 18, 'Неоплачено', 'Превышение скорости на 20км/ч на участке с ограничением в 60км/ч', 500),
+(36, '2020-12-12', '12:12', 19, 'Неоплачено', 'Превышение скорости на 20км/ч на участке с ограничением в 60км/ч', 500),
+(36, '2020-12-12', '12:12', 20, 'Неоплачено', 'Превышение скорости на 20км/ч на участке с ограничением в 60км/ч', 100),
+(36, '2010-11-11', '23:54', 21, 'Неоплачено', 'Превышение скорости на 20км/ч на участке с ограничением в 60км/ч', 900),
+(36, '2010-11-11', '23:54', 22, 'Неоплачено', 'Превышение скорости на 20км/ч на участке с ограничением в 60км/ч', 900);
 
 -- --------------------------------------------------------
 
@@ -72,9 +78,9 @@ INSERT INTO `users` (`id`, `login`, `pass`, `name`, `passport`, `snils`, `save`,
 (44, 'ячсми', '0Y/Rh9GB0LzQuA==', 'ячсми', 0, 0, 0, '0', 'zxcvb@mail.ru', 0, '0'),
 (36, 'admin', 'c2VjcmV0cGFzcw==', 'admin', 0, 0, 0, '0', 'tumenev33@mail.ru', 3, '0'),
 (40, '123123', 'MTIzMTIz', 'Андрей Андрейка', 0, 0, 0, '0', 'andr.andreyka1337@mail.ru', 0, '0'),
-(37, 'йцукен', 'MTIz', '123', 0, 0, 123, '', '', 0, ''),
+(37, 'йцукен', 'MTIz', 'Мойша Егор Петрович', 0, 0, 123, '', '', 0, ''),
 (41, 'admin1', 'c2VjcmV0cGFzcw==', 'admin1', 0, 0, 0, '0', 'admin1@mail.ru', 1, '0'),
-(45, 'йцукен', '0LnRhtGD0LrQtdC9', 'йцукен', 0, 0, 0, '0', 'wqeq@mail.ru', 0, '0');
+(46, '123123', 'MTIzMTIz', 'Виктор Тюменев', 0, 0, 0, '0', 'vornfrost@gmail.com', 0, '0');
 
 --
 -- Индексы сохранённых таблиц
@@ -100,13 +106,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `story`
 --
 ALTER TABLE `story`
-  MODIFY `ufid` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `ufid` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

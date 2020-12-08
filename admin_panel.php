@@ -133,6 +133,7 @@ endif;
 			<input type="text" name="time" class="text_form" value="ЧЧ:ММ" placeholder="Время">
 			<!-- <input type="text" value="Оплачено/Неоплачено" name="status" class="text_form"  placeholder="Статус"> -->
 			<input type="text" name="prich" class="text_form" placeholder="Причина штрафования">
+			<input type="text" name="money" class="text_form" placeholder="Стоимость">
 			<select name="status" class="text_form" readonly style="text-align: center;">
 				<option>Неоплачено</option>
 			</select>
